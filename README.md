@@ -4,6 +4,8 @@ Este aplicativo é um gerenciador de tarefas gamificado no estilo RPG. Este repo
 
 ## Este respositório usa o respositório base de [Mateus Scheper](https://github.com/mateusscheper/spring-base)
 
+## Este respositório usa o respositório base de [Mateus Scheper](https://github.com/mateusscheper/spring-base)
+
 ## Configuração Inicial
 No arquivo `application.properties`, defina a URL, usuário e senha do banco de dados, além dos caminhos para as chaves JWT (`app.key`, `app.pub`). **Importante:** não versionar os arquivos de chave.  
 
