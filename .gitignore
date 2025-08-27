@@ -3,8 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-/.env
-.env
+
 
 ### STS ###
 .apt_generated
@@ -16,11 +15,14 @@ target/
 .sts4-cache
 src/main/resources/app.key
 src/main/resources/app.pub
+src/main/resources/keystore.p12
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+*.p12
 
 ### NetBeans ###
 /nbproject/private/
