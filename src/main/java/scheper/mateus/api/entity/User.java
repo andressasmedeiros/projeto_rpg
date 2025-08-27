@@ -3,7 +3,7 @@ package scheper.mateus.api.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Where;
+import org.hibernate.annotations.SQLRestriction;
 import scheper.mateus.api.dto.UserResponse;
 import scheper.mateus.api.enums.ProviderEnum;
 
@@ -42,11 +42,11 @@ public class User {
     private List<UserInformation> userInformations = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @Where(clause = "finished = false")
+    @SQLRestriction("finished = false")
     private List<Task> currentTasks = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @Where(clause = "finished = true")
+    @SQLRestriction("finished = true")
     private List<Task> finishedTasks = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -92,6 +92,7 @@ public class User {
         response.setActive(active);
         response.setEmail(getLocalEmail());
         response.setRoles(roles.stream().map(Role::getName).toList());
+        response.setCurrentCharacterId( currentCharacter != null ? currentCharacter.getId() : null );
         return response;
     }
 }

@@ -25,6 +25,9 @@ public class UserResponse implements Serializable {
     @Schema(description = "The email address of the user.", example = "email@email.com")
     private String email;
 
+    @Schema(description = "The ID of the user's current character", example = "10")
+    private Long currentCharacterId;
+
     @Schema(description = "The roles of the user.", example = "['ADMIN', 'USER', 'SUPPORT']")
     private List<String> roles;
 
